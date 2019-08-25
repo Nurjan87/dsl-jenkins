@@ -12,6 +12,12 @@ pipeline{
                 '''
             }
         }
-
+        stage("Hownload Terraform"){
+            steps{
+                ws("/tmp"){
+                    sh "pwd"
+                }
+            }
+        }
     }
 }
