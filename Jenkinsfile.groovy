@@ -60,7 +60,7 @@ pipeline{
         }
         stage("Pull Repo"){
             steps{
-                git("https://github.com/Nurjan87/packerde.git")
+                git("https://github.com/Nurjan87/packer_dev.git")
             }
         }
         stage("Build Image"){
