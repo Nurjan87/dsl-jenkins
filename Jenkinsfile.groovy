@@ -38,7 +38,7 @@ pipeline{
                 }
             }
              stage("Download Packer"){
-            steps{
+             steps{
                 ws("tmp/"){
                     script {
                       def exists = fileExists 'packer_1.4.3_linux_amd64.zip'
@@ -55,7 +55,6 @@ pipeline{
                     }
                 }
             }
-        }
         }
     }
 }
