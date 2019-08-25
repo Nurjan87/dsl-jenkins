@@ -58,20 +58,24 @@ pipeline{
                 }
             }
         }
-        stage("Pull Repo"){
+         stage("Pull Repo"){
             steps{
                 git("https://github.com/Nurjan87/packer_dev.git")
             }
         }
         stage("Build Image"){
             steps{
-                sh "packer build updated/updated.json"
+                //sh "packer build updated/updated.json"
+                echo "Hello"
             }
         }
     }
-     post{
-      success {
-          mail to:  "turganbaevanurkan.gmail.com", subject: "job", body: "job completed"
+    post{
+        success {
+            echo "Done"
+        }
+        failure {
+            mail to:  "turganbaevanurkan@gmail.com", subject: "job", body: "job completed"
         }
     }
-}    
+}
